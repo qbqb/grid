@@ -31,6 +31,36 @@
 }
 
 
+@grid-row-width: 960px;
+@grid-cols: 16;
+@grid-gutter:30px;
 
 
+.grid-row {
+    position: relative;
+    margin:auto;
+    width: @grid-row-width;
+    .clearfix();
+}
+
+.grid-col(@n:1; @padding-left:@grid-gutter/2; @padding-right:@grid-gutter/2 ) {
+    float: left;
+    width: @n*(@grid-row-width/@grid-cols) ;
+    padding-left: @padding-left;
+    padding-right: @padding-right;
+}
+
+
+//...............................
+
+
+.main-row {
+    .grid-row;
+}
+
+.main-col {
+    .grid-col(8, 40px, 20px);
+    min-height: 100px;
+    outline: 1px solid #000;
+}
 
